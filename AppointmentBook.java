@@ -16,9 +16,13 @@ public class AppointmentBook {
             if(isMinuteFree(period, 1)) 
             {
                 block++;
-                
-            }
+                if(block == duration) {
+                    return i - duration + 1;
+                } else block = 0;
+            }    
         }
+        return -1;
+        
         
     }
     public boolean makeAppointment(int startPeriod, int endPeriod, int duration) {
